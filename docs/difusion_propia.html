@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -213,6 +247,14 @@ ul.task-list li input[type="checkbox"] {
               
 
               
+ 
+  <style>
+  .slide-deck {
+      border: 3px solid #dee2e6;
+      width: 100%;
+  }
+  </style>
+  
 
 
 <link rel="stylesheet" href="styles.css">
@@ -285,6 +327,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./difusion_propia.html">
  <span class="dropdown-text">Difusión propia</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./difusion_externa.html">
+ <span class="dropdown-text">Difusión de conocimientos</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item compact">
@@ -310,6 +356,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#presentaciones-de-resultados" id="toc-presentaciones-de-resultados" class="nav-link active" data-scroll-target="#presentaciones-de-resultados">Presentaciones de resultados</a></li>
+  <li><a href="#difusión-en-pdf-latex" id="toc-difusión-en-pdf-latex" class="nav-link" data-scroll-target="#difusión-en-pdf-latex">Difusión en PDF (latex)</a></li>
+  <li><a href="#cuadros-de-mandos-interactivos" id="toc-cuadros-de-mandos-interactivos" class="nav-link" data-scroll-target="#cuadros-de-mandos-interactivos">Cuadros de mandos interactivos</a>
+  <ul class="collapse">
+  <li><a href="#paginas-web" id="toc-paginas-web" class="nav-link" data-scroll-target="#paginas-web">Paginas web</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -345,17 +396,87 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <center>
-<p><strong>El conocimiento no pertenece mas que a la humanidad en su integridad y debe ser puesto a disposición siempre del público, es nuestro legado y nuestra arma mas valiosa.</strong></p>
+<strong>El conocimiento no pertenece mas que a la humanidad en su integridad y debe ser puesto a disposición siempre del público, es nuestro legado y nuestra arma mas valiosa.</strong>
 </center>
 </div>
 <hr>
 <p>Por ello, nuestros lenguajes de programación disponen de múltiples herramientas para difundir el conocimiento que hemos creado. A continuación os presentaremos algunas de ellas.</p>
-<section id="presentaciones-de-resultados" class="level2">
-<h2 class="anchored" data-anchor-id="presentaciones-de-resultados">Presentaciones de resultados</h2>
-<p>Cuando debemos dar una charla, una conferencia o una ponencia nos solemos ayudar de una presentación. Nuestros lenguajes de programación permiten realizar presentaciones y exportarlas en los formatos que nosotros consideremos (PDF, <a href="https://es.wikipedia.org/wiki/Microsoft_PowerPoint">Power Point</a> y html (interactivas en el ordenador)).</p>
+<section id="presentaciones-de-resultados" class="level1">
+<h1>Presentaciones de resultados</h1>
+<p>Cuando debemos dar una charla, una conferencia o una ponencia nos solemos ayudar de una presentación. Nuestros lenguajes de programación permiten realizar presentaciones y exportarlas en los formatos que nosotros consideremos (PDF, <a href="https://es.wikipedia.org/wiki/Microsoft_PowerPoint">Microsoft Power Point</a> y html (interactivas en el ordenador)).</p>
 <p>A continuación os dejamos el ejemplo de una presentación en formato html:</p>
+    <p><a href="Presentacion/presentación_ejemplo.html" target="_blank">View slides in full screen</a></p>
+       <div class="ratio ratio-16x9">
+      <iframe class="slide-deck" src="Presentacion/presentación_ejemplo.html" height="500px"></iframe>
+    </div>
+  
+<hr>
+</section>
+<section id="difusión-en-pdf-latex" class="level1">
+<h1>Difusión en PDF (latex)</h1>
+<p>La forma habitual sobre la que solemos realizar nuestras comunicaciones es en formato escrito, generalmente en formato PDF. Generalmente solemos hacer uso de programas de texto como es <a href="https://es.wikipedia.org/wiki/Microsoft_Word">Microsoft Word</a>.</p>
+<p>Sin embargo, existe un tipo de escritura académica que genera texto en alta calidad conocido como <a href="https://es.wikipedia.org/wiki/LaTeX">Latex</a>. Nuestros lenguajes de programación nos permiten crear y editar este tipo de escritura a través de otro lenguaje conocido como <a href="https://www.markdownguide.org/">Markdown</a>.</p>
+<p>A continuación os presentamos un ejemplo de ello:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Mi Documento LaTeX en R"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Tu Nombre"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"`r Sys.Date()`"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> pdf_document</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Introducción</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Este es un ejemplo de un documento LaTeX creado en R utilizando R Markdown. LaTeX es un sistema de composición de textos que permite crear documentos de alta calidad tipográfica[<span class="dv">1</span>].</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Fórmulas matemáticas</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>LaTeX es especialmente útil para escribir fórmulas matemáticas. Por ejemplo<span class="sc">:</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\[</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  E <span class="ot">=</span> mc<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\]</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="do">## Tablas</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>También podemos crear tablas fácilmente<span class="sc">:</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> Columna <span class="dv">1</span> <span class="sc">|</span> Columna <span class="dv">2</span> <span class="sc">|</span> Columna <span class="dv">3</span> <span class="sc">|</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="er">|</span><span class="sc">-----------</span><span class="er">|</span><span class="sc">-----------</span><span class="er">|</span><span class="sc">-----------</span><span class="er">|</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> A         <span class="sc">|</span> B         <span class="sc">|</span> C         <span class="sc">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="er">|</span> D         <span class="sc">|</span> E         <span class="sc">|</span> F         <span class="sc">|</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
+<section id="cuadros-de-mandos-interactivos" class="level1">
+<h1>Cuadros de mandos interactivos</h1>
+<p>A su vez, también podemos crear cuadros de mandos interactivos que, una vez que se ha recogido la información, analicen los resultados y devuelvan la información en tiempo real. Para poder realizarlo os presentamos dos alternativas: y <a href="https://quarto.org/">Quarto</a>.</p>
+<p>A continuación os presentamos dos ejemplos:</p>
+<div class="contenedor">
+<div class="card">
+<center>
+<h3 class="anchored">
+<a href="https://jjallaire.github.io/stock-explorer-dashboard/">Ejemplo de Quarto</a>
+</h3>
+<img src="imagenes/cuadro_mandos_quarto.png" alt="Descripción de la imagen">
+</center>
+</div>
+<div class="card">
+<center>
+<h3 class="anchored">
+<a href="https://jjallaire.github.io/stock-explorer-dashboard/">Ejemplo de Shiny</a>
+</h3>
+<img src="imagenes/cuadro_mandos_shiny.png" alt="Descripción de la imagen">
+</center>
+</div>
+</div>
+<hr>
+<section id="paginas-web" class="level2">
+<h2 class="anchored" data-anchor-id="paginas-web">Paginas web</h2>
+<p>Otra forma de poder difundir tus resultados es la creación de páginas web que integren todo lo anterior. Esta propia página web se encuentra realizada de esa forma con <a href="https://quarto.org/">Quarto</a> es por ello que toda ella es un ejemplo de difusión de conocimiento con página web.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

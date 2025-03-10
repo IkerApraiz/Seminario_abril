@@ -316,8 +316,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-difusión-resultados">    
         <li>
-    <a class="dropdown-item" href="./Gestion_dato.html">
- <span class="dropdown-text">Obtención y gestión Datos</span></a>
+    <a class="dropdown-item" href="./difusion_propia.html">
+ <span class="dropdown-text">Difusión propia</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./difusion_externa.html">
+ <span class="dropdown-text">Difusión de conocimientos</span></a>
   </li>  
     </ul>
   </li>
@@ -347,6 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#análisis-geoespaciales" id="toc-análisis-geoespaciales" class="nav-link" data-scroll-target="#análisis-geoespaciales">Análisis geoespaciales</a></li>
   <li><a href="#minería-de-texto" id="toc-minería-de-texto" class="nav-link" data-scroll-target="#minería-de-texto">Minería de texto</a></li>
   <li><a href="#redes-neuronales" id="toc-redes-neuronales" class="nav-link" data-scroll-target="#redes-neuronales">Redes neuronales</a></li>
+  <li><a href="#teoría-de-juegos" id="toc-teoría-de-juegos" class="nav-link" data-scroll-target="#teoría-de-juegos">Teoría de juegos</a></li>
   </ul>
 </nav>
     </div>
@@ -771,6 +776,45 @@ stopped after 100 iterations</code></pre>
 <div>
 <figure class="figure">
 <p><img src="estadistica_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="teoría-de-juegos" class="level1">
+<h1>Teoría de juegos</h1>
+<p>Otro ejemplo de los usos distintos que tienen nuestros lenguajes de programación sería para resolver problemas relacionadas con teoría de juegos. A continución os presentamos un ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgamer)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Definimos el juego</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>juego <span class="ot">&lt;-</span> <span class="fu">extensive_form</span>(</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">players =</span> <span class="fu">list</span>(<span class="st">"Kepa"</span>, </span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">rep</span>(<span class="st">"Peio"</span>, <span class="dv">2</span>),</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="dv">4</span>)),</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">actions =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"stat"</span>, <span class="st">"game"</span>),</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">c</span>(<span class="st">"stat"</span>, <span class="st">"game"</span>), <span class="fu">c</span>(<span class="st">"stat"</span>, <span class="st">"game"</span>)),</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">payoffs =</span> <span class="fu">list</span>(<span class="at">Kepa =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">Peio =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>)),</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">"right"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estadistica_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb49" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>solucion_juego <span class="ot">&lt;-</span> <span class="fu">solve_efg</span>(juego)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre data-code-line-numbers=""><code>backward induction: [(stat), (stat, game)]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb51" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">show_path</span>(solucion_juego)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="estadistica_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
