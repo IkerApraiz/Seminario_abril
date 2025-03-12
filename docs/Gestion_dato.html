@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <meta name="shinylive:serviceworker_dir" content=".">
 <script src="site_libs/quarto-contrib/shinylive-0.9.1/shinylive/load-shinylive-sw.js" type="module"></script>
@@ -324,6 +324,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./difusion_propia.html">
  <span class="dropdown-text">Difusión propia</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./difusion_externa.html">
+ <span class="dropdown-text">Difusión de conocimientos</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item compact">
@@ -382,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <center>
 <strong>Una colección organizada de información que se almacena electrónicamente para facilitar su acceso, gestión y actualización. Se trata de un sistema que permite almacenar, recuperar y manipular datos de manera eficiente, utilizando un software llamado sistema de gestión de bases de datos (DBMS)</strong>
 </center>
-<p>Por lo general, podemos definir las bases de datos actuales en dos categorias:</p>
+<p>Por lo general, podemos definir las bases de datos actuales en dos categorías:</p>
 <ul>
 <li>Bases de datos <strong>SQL</strong>: Organizan la información en tablas.</li>
 </ul>
@@ -407,7 +411,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Cerramos la conexión cuando hayas terminado</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(db)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>También disponemos podemos hacer uso de bases SQL de forma local con SQLite. A continuación te presentamos un ejemplo:</p>
+<p>También podemos hacer uso de bases SQL de forma local con SQLite. A continuación te presentamos un ejemplo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Habilitamos las librerías que utilizaremos</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
@@ -441,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Bases de datos <strong>No solo SQL</strong>: Organizan la información de forma dinámica.</li>
 </ul>
-<p>Actualmente, una de las bases de datos no solo SQL mas populares en <a href="https://www.mongodb.com/">MongoDB</a>. Esta se utiliza cuando la información no puede ser estructurada en tablas. Por supuesto, ambos lenguajes son capaces de conectarse y utilizar estas bases de datos, aqui tiene un ejemplos.</p>
+<p>Actualmente, una de las bases de datos no solo SQL mas populares es <a href="https://www.mongodb.com/">MongoDB</a>. Esta se utiliza cuando la información no puede ser estructurada en tablas. Por supuesto, ambos lenguajes son capaces de conectarse y utilizar estas bases de datos, aquí tienes un ejemplo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Habilitamos la librería que utilizaremos</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mongolite)</span>
@@ -464,14 +468,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="la-obtención-de-la-información" class="level1">
 <h1>La obtención de la información</h1>
 <p>Por supuesto, antes de gestionar la información debemos obtenerla. Normalmente lo solemos realizar a través de Cuadernos de Recogida de Datos a papel que luego son mecanizados a ordenador (en un excel por ejemplo). Nuestros lenguajes de programación nos permiten realizar <strong>Programas informáticos</strong> de recogida de datos. Formularios a medida con todo aquello que necesitamos.</p>
-<p>Como ejemplo os presentamos el framework <a href="https://shiny.posit.co/">shiny</a>, disponible en R y python, para la creación rápida de programas informáticos. A continuación disponéis de un ejemplo:</p>
+<p>Como ejemplo os presentamos el framework <a href="https://shiny.posit.co/">shiny</a>, disponible en R Python, para la creación rápida de programas informáticos. A continuación disponéis de un ejemplo:</p>
 <pre class="shinylive-r" data-engine="r" data-code-line-numbers=""><code>#| '!! shinylive warning !!': |
 #|   shinylive does not work in self-contained HTML documents.
 #|   Please set `embed-resources: false` in your metadata.
 #| standalone: true
 #| viewerHeight: 800
-library(shiny)
-ui &lt;- fluidPage(
+library(shiny);library(bslib)
+ui &lt;- fluidPage(theme = bs_theme(preset = "shiny"),
   titlePanel("Formulario de contacto"),
   sidebarLayout(
     sidebarPanel(

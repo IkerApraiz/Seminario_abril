@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -316,8 +316,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-difusión-resultados">    
         <li>
-    <a class="dropdown-item" href="./Gestion_dato.html">
- <span class="dropdown-text">Obtención y gestión Datos</span></a>
+    <a class="dropdown-item" href="./difusion_propia.html">
+ <span class="dropdown-text">Difusión propia</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./difusion_externa.html">
+ <span class="dropdown-text">Difusión de conocimientos</span></a>
   </li>  
     </ul>
   </li>
@@ -387,8 +391,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="los-comandos-de-trabajo" class="level1">
 <h1>Los comandos de trabajo</h1>
-<p>Los lenguajes de programación trabajan con texto, es decir, las órdenes se que el ordenador debe ejecutar se deben escribir. Algunas órdenes viene establecidas, otras se pueden instarlar y otras pueden ser creadas por nosotros mismos. Una vez que tenemos las órdenes, podemos combinarlas para que el ordenador haga todo lo que deseamos.</p>
-<p>En el siguiente ejemplo disponeis de unas órdenes sencillas. Creamos un objeto que se llama “sueldo” y le sumamos otro objeto llamado “extra” para después restar una retención del 15% y obtener el sueldo neto:</p>
+<p>Los lenguajes de programación trabajan con texto, es decir, las órdenes que el ordenador debe ejecutar se deben escribir. Algunas órdenes viene establecidas, otras se pueden instarla y otras pueden ser creadas por nosotros mismos. Una vez que tenemos las órdenes, podemos combinarlas para que el ordenador haga todo lo que deseamos.</p>
+<p>En el siguiente ejemplo disponéis de unas órdenes sencillas. Creamos un objeto que se llama “sueldo” y le sumamos otro objeto llamado “extra” para después restar una retención del 15% y obtener el sueldo neto:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definimos los objetos</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sueldo <span class="ot">&lt;-</span> <span class="dv">2100</span></span>
@@ -417,25 +421,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre data-code-line-numbers=""><code>Mi sueldo es de: 2635 euros</code></pre>
 </div>
 </div>
-<p>A partir de esta idea básica se construye todo lo demás. Las ordenes se van combinando unas con otras para hacer órdenes complejas. A su vez, las órdenes puede tener variables que podemos modificar para el ordenador realice la misma acción pero con otras condiciones.</p>
+<p>A partir de esta idea básica se construye todo lo demás. Las ordenes se van combinando unas con otras para hacer órdenes complejas. A su vez, las órdenes puede tener variables que podemos modificar para que el ordenador realice la misma acción pero con otras condiciones.</p>
 <p>Pongamos un ejemplo sencillo. Podemos calcular el valor de la prueba chi-cuadrado para una confianza al 95% utilizando o no la corrección de Yates. Se trata de la misma orden, calcular la prueba chi-cuadrado pero dos condiciones distintas.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos una tabla de contingencia y la visualizamos</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">38</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(datos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Boliviana"</span>, <span class="st">"Extranjera"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(datos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Menor a 10.000"</span>, <span class="st">"Mayor a 10.000"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">as.table</span>(datos)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tabla)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-source-line-numbers="11,17">
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="11,17" data-code-line-numbers="11,17"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Creamos una tabla de contingencia y la visualizamos</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>datos <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">38</span>, <span class="dv">12</span>, <span class="dv">14</span>, <span class="dv">8</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">rownames</span>(datos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Boliviana"</span>, <span class="st">"Extranjera"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">colnames</span>(datos) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Menor a 10.000"</span>, <span class="st">"Mayor a 10.000"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5"></a>tabla <span class="ot">&lt;-</span> <span class="fu">as.table</span>(datos)</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">print</span>(tabla)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>           Menor a 10.000 Mayor a 10.000
 Boliviana              38             12
 Extranjera             14              8</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizar la prueba chi-cuadrado con correción de Yates (correct = TRUE)</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tabla, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostramos los resultados</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="11,17" data-code-line-numbers="11,17"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># Realizar la prueba chi-cuadrado con correción de Yates (correct = TRUE)</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>resultado <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tabla, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># Mostramos los resultados</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Pearson's Chi-squared test with Yates' continuity correction
@@ -443,11 +447,11 @@ Extranjera             14              8</code></pre>
 data:  tabla
 X-squared = 0.62937, df = 1, p-value = 0.4276</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizamos la prueba chi-cuadrado sin correción de Yates (correct = FALSE)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tabla, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostramos los resultados</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="11,17" data-code-line-numbers="11,17"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Realizamos la prueba chi-cuadrado sin correción de Yates (correct = FALSE)</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>resultado <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tabla, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Mostramos los resultados</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre data-code-line-numbers=""><code>
     Pearson's Chi-squared test
@@ -489,7 +493,7 @@ X-squared = 1.1641, df = 1, p-value = 0.2806</code></pre>
 [1,] 0.5 0.4038315 0.5961685</code></pre>
 </div>
 </div>
-<p>Si no sabemos qué es lo que hace una orden podemos poner una interrogación antes de la orden y el ordenaor buscará la información adjunta a dicha orden:</p>
+<p>Si no sabemos qué es lo que hace una orden podemos poner una interrogación antes de la orden y el ordenar buscará la información adjunta a dicha orden:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">BinomCI</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -572,9 +576,9 @@ X-squared = 2.6786, df = 1, p-value = 0.1017</code></pre>
 <li><p>Escribir directamente en la consola de la programación</p></li>
 <li><p>Escribir en un archivo de texto denominado “script” de código</p></li>
 </ul>
-<p>La ventaja que supone escribir en los script es que podemos escribir varias ordenes (como si fuera una hoja de word) a la vez, guardarlas y decidir cuales de ellas tendrá que ejecutar el ordenador. En este ejemplo tengo un conjunto de datos. Tengo ordenes para hacer algo de estadística básica pero solo voy a ejecutar la línea donde se encuentra el histograma (la órden se llama hist()):</p>
-<div class="cell" data-source-line-numbers="11">
-<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="11" data-code-line-numbers="11"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># 1. Generar un conjunto de datos aleatorios (100 números entre 1 y 100)</span></span>
+<p>La ventaja que supone escribir en los script es que podemos escribir varias ordenes (como si fuera una hoja de word) a la vez, guardarlas y decidir cuales de ellas tendrá que ejecutar el ordenador. En este ejemplo tengo un conjunto de datos. Tengo ordenes para hacer algo de estadística básica pero solo vamos a ejecutar la línea donde se encuentra el histograma (la orden se llama hist()):</p>
+<div class="cell" data-source-line-numbers="11,12">
+<div class="sourceCode cell-code" id="cb24" data-source-line-numbers="11,12" data-code-line-numbers="11,12"><pre class="sourceCode numberSource r numberLines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># 1. Generar un conjunto de datos aleatorios (100 números entre 1 y 100)</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>datos <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">100</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb24-3"><a href="#cb24-3"></a></span>
 <span id="cb24-4"><a href="#cb24-4"></a><span class="co"># 2. Calcular la media de los datos</span></span>
