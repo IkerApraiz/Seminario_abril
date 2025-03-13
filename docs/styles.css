@@ -143,6 +143,19 @@ h4 {
       gap: 5px;
     }
 
+@media only screen and (max-width: 600px) {
+  /* Estilos para dispositivos móviles */
+  .background-container {
+    height: 100vh;
+  }
+  .foreground-text {
+    font-size: 1.5rem;
+  }
+  .ALA-top, .ALA-bottom {
+    font-size: 40px;
+  }
+}
+
 
 
 
